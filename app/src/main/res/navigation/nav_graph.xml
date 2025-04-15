@@ -3,26 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/layoutLogin">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.xxweatherxx.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/layoutLogin"
+        android:name="com.example.xxweatherxx.LayoutLogin"
+        android:label="LayoutLogin" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_layoutLogin_to_restorePasswordFragment"
+            app:destination="@id/restorePasswordFragment" />
+        <action
+            android:id="@+id/action_layoutLogin_to_loaderFragment"
+            app:destination="@id/loaderFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.xxweatherxx.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/layoutRegister"
+        android:name="com.example.xxweatherxx.LayoutRegister"
+        android:label="LayoutRegister" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_layoutRegister_to_layoutLogin"
+            app:destination="@id/layoutLogin" />
+        <action
+            android:id="@+id/action_layoutRegister_to_personalInformationFragment"
+            app:destination="@id/personalInformationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loaderFragment"
+        android:name="com.example.xxweatherxx.LoaderFragment"
+        android:label="LoaderFragment" />
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.example.xxweatherxx.PermissionFragment"
+        android:label="PermissionFragment" />
+    <fragment
+        android:id="@+id/personalInformationFragment"
+        android:name="com.example.xxweatherxx.PersonalInformationFragment"
+        android:label="PersonalInformationFragment" />
+    <fragment
+        android:id="@+id/restorePasswordFragment"
+        android:name="com.example.xxweatherxx.RestorePasswordFragment"
+        android:label="RestorePasswordFragment" />
 </navigation>

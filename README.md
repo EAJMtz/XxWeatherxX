@@ -3,6 +3,6 @@
 **XxWeather Banner®** es la aplicación móvil 🏆#1 en el traking de las condiciones climaticas de la actualidad
 
 # Team ✨
-- Eduardo Alberto Martinez Juarez
+- Eduardo Alberto Martinez Javier
 - Rosa Esmeralda Flores Harrison
 - Pablo Axel Rojas Hernandez

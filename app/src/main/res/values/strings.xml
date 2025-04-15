@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">XxWeatherxX</string>
     <!-- Strings used for fragments for navigation -->
+
     <string name="name">Name: </string>
     <string name="user_name">Username: </string>
     <string name="last_names">Last names: </string>

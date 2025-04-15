@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "561720754842",
+    "project_id": "xxweatherxx-e2c7d",
+    "storage_bucket": "xxweatherxx-e2c7d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561720754842:android:75d9048079017d97a99523",
+        "android_client_info": {
+          "package_name": "com.example.xxweatherxx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWgd33EJiWQACpyCpuYAxUUpMfjgsU_KU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

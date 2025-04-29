@@ -13,6 +13,10 @@
         android:theme="@style/Theme.XxWeatherxX"
         tools:targetApi="31">
         <activity
+            android:name=".Onboarding"
+            android:exported="false"
+            android:theme="@style/Theme.XxWeatherxX" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

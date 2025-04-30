@@ -1,40 +1,46 @@
-package com.example.xxweatherxx
+ppackage com.example.xxweatherxx
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.xxweatherxx.databinding.FragmentFirstBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.example.xxweatherxx.databinding.FragmentWeatherBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
-class FirstFragment : Fragment() {
+class WeatherFragment : Fragment() {
 
-    private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentWeatherBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: WeatherViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentWeatherBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        // Observadores de LiveData
+        viewModel.city.observe(viewLifecycleOwner) {
+            binding.tvCity.text = it
         }
+
+        viewModel.temperature.observe(viewLifecycleOwner) {
+            binding.tvTemperature.text = it
+        }
+
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.weatherLoader.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
+
+        // Simula la carga de clima
+        viewModel.loadWeather()
     }
 
     override fun onDestroyView() {
